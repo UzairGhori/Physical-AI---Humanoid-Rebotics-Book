@@ -1,55 +1,57 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Version change: old → 1.0.0 → new → 2.0.0
+List of modified principles:
+- Old principles removed, new numbered principles added.
+  - Follow Specifications Exactly (removed)
+  - Maintain Consistency (removed)
+  - Prioritize Documentation Standards (removed)
+- New principles added:
+  - 1. Spec-First
+  - 2. Clarity & Consistency
+  - 3. Accuracy Over Speed
+  - 4. Iterative Improvement
+  - 5. Transparency
+
+Added sections:
+- Purpose
+- Rules / Constraints
+
+Removed sections:
+- Book Organization (content moved to Rules / Constraints)
+- Specific governance rules (simplified)
+
+Templates requiring updates:
+- .specify/templates/plan-template.md: ✅ updated (no explicit changes needed)
+- .specify/templates/spec-template.md: ✅ updated (no explicit changes needed)
+- .specify/templates/tasks-template.md: ✅ updated (no explicit changes needed)
+- .specify/templates/commands/*.md: ⚠ pending (directory not found)
+- README.md: ⚠ pending (file not found)
+- docs/quickstart.md: ⚠ pending (file not found)
+
+Follow-up TODOs:
+- TODO(RATIFICATION_DATE): Clarify original ratification date if different from last amended date.
+- Investigate missing .specify/templates/commands/ directory.
+- Investigate missing README.md and docs/quickstart.md.
+-->
+# Constitution
+
+## Purpose
+This project will create a fully spec-driven technical book using Spec-Kit Plus, Claude Code, Docusaurus, and GitHub Pages. All content must be generated from approved specifications only.
 
 ## Core Principles
+1. **Spec-First** — No content is created without a written specification.
+2. **Clarity & Consistency** — Terminology, style, formatting, and structure must stay uniform.
+3. **Accuracy Over Speed** — AI should prioritize correctness, not quick generation.
+4. **Iterative Improvement** — Every draft may be refined based on updated specs.
+5. **Transparency** — AI must ask clarifying questions when specs are incomplete.
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+## Rules / Constraints
+- AI must strictly follow specifications and avoid assumptions.
+- Every chapter must follow the same structural standard.
+- Docusaurus will be used as the book framework with a defined sidebar.
+- All files must be version-controlled using GitHub.
+- Final output must deploy on GitHub Pages using a clean build.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+This constitution governs all decisions, workflows, and AI interactions throughout the project.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
-
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
-
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
-
-### [PRINCIPLE_6_NAME]
-
-
-[PRINCIPLE__DESCRIPTION]
-
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
-
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
-
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
-
-## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
-
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
-
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 2.0.0 | **Ratified**: 2025-12-05 | **Last Amended**: 2025-12-05

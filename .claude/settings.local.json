@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(.specify/scripts/powershell/check-prerequisites.ps1:*)",
+      "Bash(git fetch:*)",
+      "Bash(.specify/scripts/powershell/create-new-feature.ps1:*)",
+      "Bash(.specify/scripts/bash/create-phr.sh:*)",
+      "Bash(if not exist \"history\\adr\" mkdir \"history\\adr\")",
+      "Bash(mkdir -p \"history/adr\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
