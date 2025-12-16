@@ -4,12 +4,12 @@
   "private": true,
   "scripts": {
     "docusaurus": "node node_modules/@docusaurus/core/bin/docusaurus.mjs",
-    "start": "node node_modules/@docusaurus/core/bin/docusaurus.mjs start",
-    "build": "node node_modules/@docusaurus/core/bin/docusaurus.mjs build",
+    "start": "node --max_old_space_size=4096 node_modules/@docusaurus/core/bin/docusaurus.mjs start",
+    "build": "node --max_old_space_size=4096 node_modules/@docusaurus/core/bin/docusaurus.mjs build",
     "swizzle": "node node_modules/@docusaurus/core/bin/docusaurus.mjs swizzle",
-    "deploy": "node node_modules/@docusaurus/core/bin/docusaurus.mjs deploy",
+    "deploy": "node --max_old_space_size=4096 node_modules/@docusaurus/core/bin/docusaurus.mjs deploy",
     "clear": "node node_modules/@docusaurus/core/bin/docusaurus.mjs clear",
-    "serve": "node node_modules/@docusaurus/core/bin/docusaurus.mjs serve",
+    "serve": "node --max_old_space_size=4096 node_modules/@docusaurus/core/bin/docusaurus.mjs serve",
     "write-translations": "node node_modules/@docusaurus/core/bin/docusaurus.mjs write-translations",
     "write-heading-ids": "node node_modules/@docusaurus/core/bin/docusaurus.mjs write-heading-ids",
     "typecheck": "tsc"

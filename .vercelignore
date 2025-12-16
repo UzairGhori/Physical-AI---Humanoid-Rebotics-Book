@@ -1,0 +1,16 @@
+# Dependencies
+node_modules
+
+# Git
+.git
+
+# Vercel
+.vercel
+
+# Development files
+.specify
+.history
+.claude
+
+# Backend (separate deployment)
+Backend
