@@ -81,7 +81,7 @@ const config: Config = {
       title: 'Physical AI & Humanoid Robotics',
       logo: {
         alt: 'Physical AI & Humanoid Robotics Logo',
-        src: 'img/logo.svg',
+        src: 'https://img.icons8.com/?size=100&id=PsAPeKP98vSE&format=png&color=000000',
       },
       items: [
         {
@@ -90,7 +90,7 @@ const config: Config = {
           position: 'left',
           label: 'Course Content',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
+        
         {
           href: 'https://github.com/UzairGhori/Physical-AI---Humanoid-Rebotics-Book',
           label: 'GitHub',
@@ -130,10 +130,6 @@ const config: Config = {
         {
           title: 'More',
           items: [
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
             {
               label: 'GitHub',
               href: 'https://github.com/UzairGhori/Physical-AI---Humanoid-Rebotics-Book',
