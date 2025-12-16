@@ -15,10 +15,9 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://physical-ai-humanoid-roboticss-hackathon.vercel.app',
+  url: 'https://UzairGhori.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
-  // For Vercel deployment, use '/' as baseUrl
-  baseUrl: '/',
+  baseUrl: '/Physical-AI---Humanoid-Rebotics-Book/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
