@@ -30,7 +30,10 @@ const config: Config = {
 
   // Markdown configuration (v4 compatible)
   markdown: {
-    onBrokenMarkdownLinks: 'warn',
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+      onBrokenMarkdownImages: 'warn',
+    },
   },
 
   // Optimization for build performance
