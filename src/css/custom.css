@@ -1,30 +1,241 @@
 /**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
+ * Physical AI & Humanoid Robotics Course
+ * Professional Theme CSS
  */
 
-/* You can override the default Infima variables here. */
+/* Robotics-themed color palette */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #71dda1;
-  --ifm-color-primary-darker: #86fdbc;
-  --ifm-color-primary-darkest: #7bf1b0;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  /* Primary Blue - Technology & Trust */
+  --ifm-color-primary: #3B82F6;
+  --ifm-color-primary-dark: #2563EB;
+  --ifm-color-primary-darker: #1D4ED8;
+  --ifm-color-primary-darkest: #1E40AF;
+  --ifm-color-primary-light: #60A5FA;
+  --ifm-color-primary-lighter: #93C5FD;
+  --ifm-color-primary-lightest: #BFDBFE;
+
+  /* Accent Colors */
+  --ifm-color-success: #10B981;
+  --ifm-color-warning: #F59E0B;
+  --ifm-color-danger: #EF4444;
+
+  /* Typography */
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
+  --ifm-heading-font-weight: 700;
+
+  /* Spacing & Layout */
+  --ifm-navbar-height: 4rem;
+  --ifm-footer-padding-vertical: 3rem;
+
+  /* Cards & Shadows */
+  --ifm-card-background-color: #ffffff;
+  --ifm-global-shadow-lw: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --ifm-global-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
+  --ifm-global-shadow-tl: 0 8px 32px rgba(0, 0, 0, 0.12);
+
+  /* Code Highlighting */
+  --docusaurus-highlighted-code-line-bg: rgba(59, 130, 246, 0.1);
+
+  /* Border Radius */
+  --ifm-global-radius: 8px;
+  --ifm-button-border-radius: 8px;
+  --ifm-card-border-radius: 12px;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
+/* Dark Mode - Sleek Robotics Theme */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-primary: #60A5FA;
+  --ifm-color-primary-dark: #3B82F6;
+  --ifm-color-primary-darker: #2563EB;
+  --ifm-color-primary-darkest: #1D4ED8;
+  --ifm-color-primary-light: #93C5FD;
+  --ifm-color-primary-lighter: #BFDBFE;
+  --ifm-color-primary-lightest: #DBEAFE;
+
+  --ifm-background-color: #0F172A;
+  --ifm-background-surface-color: #1E293B;
+  --ifm-card-background-color: #1E293B;
+  --ifm-navbar-background-color: #0F172A;
+  --ifm-footer-background-color: #0F172A;
+
+  --docusaurus-highlighted-code-line-bg: rgba(96, 165, 250, 0.15);
+}
+
+/* Global Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-feature-settings: 'kern' 1, 'liga' 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Navbar Enhancements */
+.navbar {
+  backdrop-filter: blur(10px);
+  box-shadow: var(--ifm-global-shadow-lw);
+}
+
+.navbar__title {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.navbar__logo {
+  height: 2rem;
+  margin-right: 0.75rem;
+}
+
+/* Button Styles */
+.button {
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.button--primary {
+  background: linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-dark) 100%);
+  border: none;
+}
+
+.button--primary:hover {
+  background: linear-gradient(135deg, var(--ifm-color-primary-dark) 0%, var(--ifm-color-primary-darker) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.button--secondary {
+  background: white;
+  color: var(--ifm-color-primary);
+  border: 2px solid white;
+}
+
+.button--secondary:hover {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--ifm-color-primary-dark);
+}
+
+/* Documentation Sidebar */
+.menu__link {
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.menu__link:hover {
+  background: var(--ifm-color-primary-lightest);
+}
+
+.menu__link--active {
+  background: var(--ifm-color-primary);
+  color: white;
+}
+
+[data-theme='dark'] .menu__link:hover {
+  background: var(--ifm-color-primary-darkest);
+}
+
+[data-theme='dark'] .menu__link--active {
+  background: var(--ifm-color-primary-dark);
+}
+
+/* Code Blocks */
+.prism-code {
+  border-radius: var(--ifm-card-border-radius);
+}
+
+pre {
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+[data-theme='dark'] pre {
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+/* Tables */
+table {
+  border-radius: var(--ifm-card-border-radius);
+  overflow: hidden;
+}
+
+th {
+  background: var(--ifm-color-primary);
+  color: white;
+}
+
+[data-theme='dark'] th {
+  background: var(--ifm-color-primary-dark);
+}
+
+/* Admonitions */
+.admonition {
+  border-radius: var(--ifm-card-border-radius);
+  border-left-width: 4px;
+}
+
+/* Footer */
+.footer {
+  background: linear-gradient(180deg, var(--ifm-footer-background-color) 0%, #0a0f1a 100%);
+}
+
+.footer__title {
+  font-weight: 700;
+  color: white;
+}
+
+.footer__link-item {
+  transition: color 0.2s ease;
+}
+
+.footer__link-item:hover {
+  color: var(--ifm-color-primary-light);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ifm-background-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ifm-color-emphasis-400);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ifm-color-emphasis-500);
+}
+
+/* Selection */
+::selection {
+  background: var(--ifm-color-primary);
+  color: white;
+}
+
+/* Responsive Typography */
+@media screen and (max-width: 996px) {
+  :root {
+    --ifm-font-size-base: 15px;
+  }
+}
+
+/* Animation for page transitions */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.main-wrapper > div {
+  animation: fadeIn 0.3s ease-out;
 }

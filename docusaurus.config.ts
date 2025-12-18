@@ -7,7 +7,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'Physical AI & Humanoid Robotics',
   tagline: 'Comprehensive Course on ROS 2, Simulation, NVIDIA Isaac, and Vision-Language-Action Models',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.svg',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -15,9 +15,11 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://UzairGhori.github.io',
+  // For Vercel deployment - the URL will be determined by Vercel
+  url: 'https://physical-ai-humanoid-robotics.vercel.app',
   // Set the /<baseUrl>/ pathname under which your site is served
-  baseUrl: '/Physical-AI---Humanoid-Rebotics-Book/',
+  // For Vercel deployment, use '/' as the base URL
+  baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -25,7 +27,11 @@ const config: Config = {
   projectName: 'Physical-AI---Humanoid-Rebotics-Book', // Usually your repo name.
 
   onBrokenLinks: 'warn', // Changed from 'throw' to reduce build complexity
-  onBrokenMarkdownLinks: 'warn',
+
+  // Markdown configuration (v4 compatible)
+  markdown: {
+    onBrokenMarkdownLinks: 'warn',
+  },
 
   // Optimization for build performance
   trailingSlash: false,
@@ -72,8 +78,8 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    // Social card for link previews
+    image: 'img/social-card.svg',
     colorMode: {
       respectPrefersColorScheme: true,
     },
@@ -81,7 +87,7 @@ const config: Config = {
       title: 'Physical AI & Humanoid Robotics',
       logo: {
         alt: 'Physical AI & Humanoid Robotics Logo',
-        src: 'https://img.icons8.com/?size=100&id=PsAPeKP98vSE&format=png&color=000000',
+        src: 'img/robot-logo.svg',
       },
       items: [
         {

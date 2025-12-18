@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <!-- Background -->
+  <rect width="400" height="300" fill="#FDF4FF"/>
+
+  <!-- Vision Section -->
+  <g transform="translate(30, 50)">
+    <!-- Camera/Eye Icon -->
+    <circle cx="50" cy="50" r="40" fill="#8B5CF6" opacity="0.2"/>
+    <circle cx="50" cy="50" r="30" fill="#8B5CF6"/>
+    <circle cx="50" cy="50" r="15" fill="#1E1B4B"/>
+    <circle cx="55" cy="45" r="5" fill="white" opacity="0.6"/>
+    <text x="50" y="110" text-anchor="middle" fill="#6D28D9" font-size="14" font-weight="bold">Vision</text>
+  </g>
+
+  <!-- Language Section -->
+  <g transform="translate(155, 50)">
+    <!-- Speech/Text Icon -->
+    <rect x="10" y="20" width="80" height="60" rx="10" fill="#3B82F6"/>
+    <text x="50" y="45" text-anchor="middle" fill="white" font-size="10">Hello</text>
+    <text x="50" y="60" text-anchor="middle" fill="white" font-size="10">Robot!</text>
+    <polygon points="30,80 45,80 35,95" fill="#3B82F6"/>
+    <text x="50" y="110" text-anchor="middle" fill="#1E40AF" font-size="14" font-weight="bold">Language</text>
+  </g>
+
+  <!-- Action Section -->
+  <g transform="translate(280, 50)">
+    <!-- Robot Arm Icon -->
+    <rect x="20" y="30" width="60" height="15" rx="3" fill="#10B981"/>
+    <rect x="70" y="25" width="15" height="25" rx="3" fill="#10B981"/>
+    <circle cx="90" cy="37" r="12" fill="#059669"/>
+    <!-- Gripper -->
+    <rect x="98" y="30" width="15" height="5" rx="2" fill="#047857"/>
+    <rect x="98" y="40" width="15" height="5" rx="2" fill="#047857"/>
+    <text x="50" y="110" text-anchor="middle" fill="#047857" font-size="14" font-weight="bold">Action</text>
+  </g>
+
+  <!-- Central Processing/Integration -->
+  <circle cx="200" cy="200" r="50" fill="url(#vlaGrad)" stroke="#6D28D9" stroke-width="3"/>
+  <text x="200" y="195" text-anchor="middle" fill="white" font-size="12" font-weight="bold">VLA</text>
+  <text x="200" y="210" text-anchor="middle" fill="white" font-size="10">Model</text>
+
+  <defs>
+    <linearGradient id="vlaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6"/>
+      <stop offset="50%" style="stop-color:#3B82F6"/>
+      <stop offset="100%" style="stop-color:#10B981"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Connection Arrows -->
+  <path d="M80 120 Q80 160 160 190" stroke="#8B5CF6" stroke-width="3" fill="none" marker-end="url(#arrow1)"/>
+  <path d="M205 120 Q205 140 200 150" stroke="#3B82F6" stroke-width="3" fill="none" marker-end="url(#arrow2)"/>
+  <path d="M330 120 Q330 160 240 190" stroke="#10B981" stroke-width="3" fill="none" marker-end="url(#arrow3)"/>
+
+  <defs>
+    <marker id="arrow1" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#8B5CF6"/>
+    </marker>
+    <marker id="arrow2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#3B82F6"/>
+    </marker>
+    <marker id="arrow3" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#10B981"/>
+    </marker>
+  </defs>
+</svg>
