@@ -39,12 +39,54 @@ const config: Config = {
   // Optimization for build performance
   trailingSlash: false,
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
+  // Internationalization - Multiple language support
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'ur', 'zh', 'es', 'ar', 'hi', 'fr', 'de', 'ja', 'ko'],
+    localeConfigs: {
+      en: {
+        label: 'English',
+        htmlLang: 'en-US',
+      },
+      ur: {
+        label: 'اردو',
+        direction: 'rtl',
+        htmlLang: 'ur-PK',
+      },
+      zh: {
+        label: '中文',
+        htmlLang: 'zh-CN',
+      },
+      es: {
+        label: 'Español',
+        htmlLang: 'es-ES',
+      },
+      ar: {
+        label: 'العربية',
+        direction: 'rtl',
+        htmlLang: 'ar-SA',
+      },
+      hi: {
+        label: 'हिन्दी',
+        htmlLang: 'hi-IN',
+      },
+      fr: {
+        label: 'Français',
+        htmlLang: 'fr-FR',
+      },
+      de: {
+        label: 'Deutsch',
+        htmlLang: 'de-DE',
+      },
+      ja: {
+        label: '日本語',
+        htmlLang: 'ja-JP',
+      },
+      ko: {
+        label: '한국어',
+        htmlLang: 'ko-KR',
+      },
+    },
   },
 
   presets: [
@@ -99,7 +141,20 @@ const config: Config = {
           position: 'left',
           label: 'Course Content',
         },
-        
+        {
+          type: 'localeDropdown',
+          position: 'right',
+          dropdownItemsAfter: [
+            {
+              type: 'html',
+              value: '<hr style="margin: 0.3rem 0;">',
+            },
+            {
+              href: 'https://github.com/UzairGhori/Physical-AI---Humanoid-Rebotics-Book/issues',
+              label: 'Help Translate',
+            },
+          ],
+        },
         {
           href: 'https://github.com/UzairGhori/Physical-AI---Humanoid-Rebotics-Book',
           label: 'GitHub',
