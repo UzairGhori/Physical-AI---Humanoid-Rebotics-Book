@@ -21,12 +21,12 @@ function HomepageHeader() {
             <p className={styles.heroSubtitle}>{siteConfig.tagline}</p>
             <div className={styles.buttons}>
               <Link
-                className="button button--secondary button--lg"
+                className={clsx('button button--lg', styles.primaryButton)}
                 to="/docs/intro">
                 Start Learning
               </Link>
               <Link
-                className="button button--outline button--lg"
+                className={clsx('button button--lg', styles.secondaryButton)}
                 to="/docs/modules/ros2-fundamentals/intro">
                 Explore ROS 2
               </Link>
