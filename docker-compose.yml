@@ -1,0 +1,104 @@
+# =============================================================================
+# RAG Chatbot - Local Development Stack
+# =============================================================================
+# Usage: docker-compose up -d
+#
+# Services:
+#   - api: FastAPI backend (port 8000)
+#   - qdrant: Vector database (port 6333)
+#   - postgres: Metadata database (port 5432)
+# =============================================================================
+
+services:
+  # ---------------------------------------------------------------------------
+  # FastAPI Backend Service
+  # ---------------------------------------------------------------------------
+  api:
+    build:
+      context: ./Backend
+      dockerfile: Dockerfile
+    container_name: ragchat-api
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./Backend/.env
+    environment:
+      - QDRANT_URL=http://qdrant:6333
+      - DATABASE_URL=postgresql://dev:dev@postgres:5432/ragchat
+    depends_on:
+      qdrant:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/v1/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    restart: unless-stopped
+    networks:
+      - ragchat-network
+
+  # ---------------------------------------------------------------------------
+  # Qdrant Vector Database
+  # ---------------------------------------------------------------------------
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: ragchat-qdrant
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - qdrant_data:/qdrant/storage
+    environment:
+      - QDRANT__SERVICE__GRPC_PORT=6334
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:6333/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    restart: unless-stopped
+    networks:
+      - ragchat-network
+
+  # ---------------------------------------------------------------------------
+  # PostgreSQL Database (Metadata Storage)
+  # ---------------------------------------------------------------------------
+  postgres:
+    image: postgres:15-alpine
+    container_name: ragchat-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: ragchat
+      POSTGRES_USER: dev
+      POSTGRES_PASSWORD: dev
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U dev -d ragchat"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    restart: unless-stopped
+    networks:
+      - ragchat-network
+
+# -----------------------------------------------------------------------------
+# Volumes
+# -----------------------------------------------------------------------------
+volumes:
+  qdrant_data:
+    driver: local
+  postgres_data:
+    driver: local
+
+# -----------------------------------------------------------------------------
+# Networks
+# -----------------------------------------------------------------------------
+networks:
+  ragchat-network:
+    driver: bridge
